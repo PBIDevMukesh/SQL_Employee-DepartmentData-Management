@@ -1,4 +1,4 @@
-CREATE TABLE DEPT (  ------------ SQL Assignment Database
+CREATE TABLE DEPT ( 
     DEPTNO INT PRIMARY KEY,
     DNAME VARCHAR(255),
     LOC VARCHAR(255)
@@ -64,7 +64,7 @@ SELECT * FROM EMP
 WHERE JOB='MANAGER'
 AND DEPTNO IN (20,30)
 
---3) Display all the managers who donít have a manager(DONT HAVE CLARITY ON QUESTION)
+--3) Display all the managers who don‚Äôt have a manager(DONT HAVE CLARITY ON QUESTION)
 
 SELECT * FROM EMP
 WHERE JOB = 'MANAGER' 
@@ -77,7 +77,7 @@ SELECT * FROM EMP
 WHERE COMM IS NOT NULL AND
 JOB NOT IN ('MANAGER','ANALYST')
 
---5)Display all the ANALYSTs whose name doesnít ends with ëSí 
+--5)Display all the ANALYSTs whose name doesn‚Äôt ends with ‚ÄòS‚Äô 
 
 SELECT * FROM EMP
 WHERE JOB = 'ANALYST' AND
@@ -87,7 +87,7 @@ SELECT * FROM EMP
 WHERE JOB = 'MANAGER' AND
 NOT ENAME LIKE 'S%'  -- START WITH
 
---6)Display all the employees whose naming is having letter ëEí as the last but one character
+--6)Display all the employees whose naming is having letter ‚ÄòE‚Äô as the last but one character
 
 SELECT * FROM EMP
 WHERE ENAME LIKE '%E_'
@@ -427,7 +427,7 @@ SELECT EMP.ENAME FROM EMP
 JOIN DEPT ON EMP.DEPTNO= DEPT.DEPTNO
 WHERE DEPT.LOC = 'DALLAS'
 
---39) Delete the records from the DEPT table that donít have
+--39) Delete the records from the DEPT table that don‚Äôt have
 --matching records in EMP
 
 DELETE FROM DEPT
@@ -437,7 +437,7 @@ WHERE DEPTNO NOT IN (
     JOIN EMP E ON E.DEPTNO = D.DEPTNO )
 
 --40)Display all the departmental information for all the existing employees and if
---a department has no employees display it as ìNo employeesî.
+--a department has no employees display it as ‚ÄúNo employees‚Äù.
 
 
 SELECT D.DEPTNO, D.DNAME, D.LOC, COALESCE (COUNT(E.EMPNO), 'NO EMPLOYEE') AS EMPLOYEE_COUNT
@@ -465,7 +465,7 @@ FULL OUTER JOIN EMP E
 ORDER BY COALESCE(D.DEPTNO, E.DEPTNO);
 
 --42)Get only the non-matching records from DEPT table (matching records
---shouldnít be selected).
+--shouldn‚Äôt be selected).
 
 SELECT D.*
 FROM DEPT D
@@ -474,7 +474,7 @@ LEFT OUTER JOIN EMP E
 WHERE E.DEPTNO IS NULL;
 
 --43)Select all the employees name along with their manager names, and if an
---employee does not have a manager, display him as ìCEOî.
+--employee does not have a manager, display him as ‚ÄúCEO‚Äù.
 
 
 SELECT
